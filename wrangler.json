@@ -10,5 +10,13 @@
   "upload_source_maps": true,
   "vars": {
     "VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare"
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "counter-db",
+      "database_id": "8b55282f-30a7-4f29-8df8-c1eae81dc2d9",
+      "migrations_dir": "app/db/migrations"
+    }
+  ]
 }

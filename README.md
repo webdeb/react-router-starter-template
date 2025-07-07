@@ -1,36 +1,14 @@
 # Welcome to React Router + Cloudflare Workers!
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/react-router-starter-template)
-
-![React Router Starter Template Preview](https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/bfdc2f85-e5c9-4c92-128b-3a6711249800/public)
-
-<!-- dash-content-start -->
-
-A modern, production-ready template for building full-stack React applications using [React Router](https://reactrouter.com/) and the [Cloudflare Vite plugin](https://developers.cloudflare.com/workers/vite-plugin/).
-
-## Features
-
 - 🚀 Server-side rendering
 - ⚡️ Hot Module Replacement (HMR)
 - 📦 Asset bundling and optimization
 - 🔄 Data loading and mutations
 - 🔒 TypeScript by default
 - 🎉 TailwindCSS for styling
+- 🗄️ Drizzle ORM with Cloudflare D1
+- 📊 Database migrations and schema management
 - 📖 [React Router docs](https://reactrouter.com/)
-
-<!-- dash-content-end -->
-
-## Getting Started
-
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
-
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/react-router-starter-template
-```
-
-A live public deployment of this template is available at [https://react-router-starter-template.templates.workers.dev](https://react-router-starter-template.templates.workers.dev)
-
-### Installation
 
 Install the dependencies:
 
@@ -47,6 +25,29 @@ npm run dev
 ```
 
 Your application will be available at `http://localhost:5173`.
+
+## Database Setup
+
+This project uses Drizzle ORM with Cloudflare D1. To set up the database:
+
+1. **Create a D1 database:**
+   ```bash
+   npx wrangler d1 create counter-db
+   ```
+
+2. **Update the database ID in `wrangler.json`:**
+   Replace `your-database-id-here` with the actual database ID from step 1.
+
+3. **Generate and apply migrations:**
+   ```bash
+   npm run db:generate
+   npm run db:migrate
+   ```
+
+4. **Optional: Open Drizzle Studio to view data:**
+   ```bash
+   npm run db:studio
+   ```
 
 ## Typegen
 

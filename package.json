@@ -16,6 +16,8 @@
     "publish": true
   },
   "dependencies": {
+    "axios": "^1.10.0",
+    "drizzle-orm": "^0.37.0",
     "isbot": "5.1.26",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -28,9 +30,11 @@
     "@types/node": "24.0.4",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "drizzle-kit": "^0.25.0",
     "tailwindcss": "4.1.1",
     "typescript": "5.8.3",
     "vite": "^6.0.0",
+    "vite-plugin-devtools-json": "^0.2.1",
     "vite-tsconfig-paths": "5.1.4",
     "wrangler": "4.21.x"
   },
@@ -38,6 +42,9 @@
     "build": "react-router build",
     "cf-typegen": "wrangler types && react-router typegen",
     "check": "tsc && react-router build && wrangler deploy --dry-run",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "wrangler d1 migrations apply counter-db",
+    "db:studio": "drizzle-kit studio",
     "deploy": "wrangler deploy",
     "dev": "react-router dev",
     "preview": "npm run build && vite preview",
